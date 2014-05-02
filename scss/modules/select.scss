@@ -1,0 +1,132 @@
+.husky-select-container {
+
+    position: relative;
+
+    &.big {
+        .dropdown-label {
+            font-size: $baseFontSize;
+            padding: 5px 10px 5px 15px;
+
+            .dropdown-toggle {
+                right: 15px;
+                top: 5px;
+            }
+        }
+    }
+
+    .dropdown-label {
+        background: $grayLighter;
+        padding: 0px 5px 0px 10px;
+        line-height: 30px;
+        border-radius: 4px;
+        clear: both;
+        font-size: $smallFontSize;
+        .checkbox {
+            padding-right: 20px;
+        }
+        .dropdown-toggle {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+    }
+
+    &.disabled {
+        .dropdown-label {
+            background: $grayLighterer;
+            color: $gray;
+            cursor: default;
+        }
+        .dropdown-toggle {
+            cursor: default;
+        }
+        .dropdown-toggle:after {
+            border-top-color: $gray;
+            cursor: default;
+        }
+    }
+
+    .dropdown-list {
+        width: 100%;
+        /*display: inline-block;*/
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        margin-top: 5px;
+        background-color: #FFF;
+        border: 1px solid $grayLighter;
+        z-index: 2000;
+        border-radius: $dropdownBorderRadius;
+
+        &.top {
+            top: inherit;
+            bottom: 5px;
+        }
+
+        .disabled,
+        .disabled:hover {
+            background: none;
+            cursor: default;
+            .item-value {
+                color: $grayLight;
+            }
+        }
+        .check {
+            float: left;
+            width: 20px;
+            margin-right: 10px;
+            padding-top: 7px;
+        }
+        .item-value {
+            float: left;
+            line-height: 30px;
+        }
+
+        & > ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+
+            input {
+                margin: 0;
+            }
+
+            & > li {
+                padding: 0px 10px 0px 20px;
+                clear: both;
+                height: 30px;
+
+                &:hover,
+                &.hover {
+                    background-color: $highlightColor;
+                    cursor: pointer;
+                }
+                &:hover .item-value {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &.small {
+        .dropdown-label {
+            font-size: $reallySmallFontSize;
+            line-height: 20px;
+        }
+        .dropdown-toggle::after {
+            top: 0;
+        }
+        .dropdown-list {
+            top: 12px;
+            min-width: 200px;
+            max-width: 100%;
+            border-radius: $dropdownBorderRadiusSmall;
+
+            &.top {
+                top: auto;
+                bottom: -3px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Husky 2.0",
+    "version": "0.1.0",
+    "authors": [
+        "Thomas Schedler <thomas@chirimoya.at>"
+    ],
+    "description": "A scalable, event-driven JavaScript web-applications framework.",
+    "keywords": [
+        "scalable",
+        "event-driven",
+        "web-application",
+        "components"
+    ],
+    "main": "src/husky.js",
+    "dependencies": {
+        "requirejs": "~2.1.11",
+        "requirejs-text": "~2.0.12",
+        "jquery": "~2.1.1",
+        "lodash": "~2.4.1",
+        "eventemitter2": "~0.4.13"
+    },
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

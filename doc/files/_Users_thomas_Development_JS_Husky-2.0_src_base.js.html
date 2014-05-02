@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>/Users/thomas/Development/JS/Husky-2.0/src/base.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/base.html">base</a></li>
+            
+                <li><a href="../classes/Husky.html">Husky</a></li>
+            
+                <li><a href="../classes/Logger.html">Logger</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/husky.html">husky</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: /Users/thomas/Development/JS/Husky-2.0/src/base.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * This file is part of Husky, a scalable, event-driven JavaScript web applications framework.
+ *
+ * (c) Thomas Schedler &lt;thomas@chirimoya.at&gt;
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ *
+ * @module husky
+ */
+(function() {
+    &#x27;use strict&#x27;;
+
+    if (window.jQuery) {
+        define(&#x27;jquery&#x27;, function() {
+            return window.jQuery;
+        });
+    } else {
+        require.config({
+            paths: {
+                jquery: &#x27;bower_components/jquery/dist/jquery&#x27;
+            },
+            shim: {
+                jquery: { exports: &#x27;$&#x27; }
+            }
+        });
+    }
+
+    if (window._) {
+        define(&#x27;lodash&#x27;, [], function() {
+            return window._;
+        });
+    } else {
+        require.config({
+            paths: {
+                lodash: &#x27;bower_components/lodash/dist/lodash&#x27;
+            },
+            shim: {
+                lodash: { exports: &#x27;_&#x27; }
+            }
+        });
+    }
+
+    define([&#x27;lodash&#x27;, &#x27;jquery&#x27;], function(_, $) {
+
+        /**
+         * @class base
+         * @static
+         */
+        var base = {};
+
+        base.dom = {
+            /**
+             * @method dom.find
+             */
+            find: function(selector, context) {
+                context = context || document;
+                return $(context).find(selector);
+            },
+
+            /**
+             * @method dom.data
+             */
+            data: function(selector, attribute) {
+                return $(selector).data(attribute);
+            }
+        };
+
+        base.data = {
+            deferred: $.Deferred,
+            when: $.when
+        };
+
+        base.util = {
+            defaults: _.defaults,
+            each: $.each,
+            extend: $.extend,
+            uniq: _.uniq,
+            uniqueId: _.uniqueId,
+            decamelize: function(camelCase, delimiter) {
+                delimiter = (delimiter === undefined) ? &#x27;_&#x27; : delimiter;
+                return camelCase.replace(/([A-Z])/g, delimiter + &#x27;$1&#x27;).toLowerCase();
+            }
+        };
+
+        base.events = {
+            listen: function(context, events, selector, fn) {
+                return $(context).on(events, selector, fn);
+            },
+            bindAll: function() {
+                return _.bindAll.apply(this, arguments);
+            }
+        };
+
+        return base;
+
+    });
+
+})();
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

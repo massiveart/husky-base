@@ -1,0 +1,103 @@
+.husky-datagrid {
+    $fullWidthPaddingLeft: 60px;
+    $overflowIconSpacing: 30px;
+
+    position: relative;
+    padding-top: 10px;
+
+    table {
+        td {
+
+            input{
+                margin: 0 0 0 -2px;
+                border-color: $white;
+            }
+
+            // Remove when validation type for serverside validation is implemented
+            .server-validation-error {
+                border-color: #AD0710 !important;
+                border-width: 2px !important;
+            }
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    thead {
+        tr {
+            height: 30px;
+            padding-top: 10px;
+            border-color: $grayLighter;
+        }
+        th {
+            padding-top: 0;
+            font-weight: normal;
+            white-space: nowrap;
+
+            &.is-sortable {
+                color: black;
+                cursor: pointer;
+            }
+            &.is-selected {
+                font-weight: bold;
+            }
+        }
+
+        .table-container {
+            width: 100%;
+        }
+    }
+
+    tbody {
+        tr:last-child {
+            border-width: 2px;
+        }
+    }
+
+    .table-container {
+        overflow: auto;
+
+        &.overflow:after {
+            color: $grayLighter;
+            font-size: 22px;
+            font-family: $baseIconFont;
+            content: '\e212';
+            position: absolute;
+            right: -26px;
+            top: 40%;
+        }
+    }
+
+    .datagrid-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -50px 0 0 -50px;
+    }
+
+    .dropdown-menu {
+        margin-top: 5px;
+    }
+    .dropdown-toggle::after {
+        margin-left: 12px;
+    }
+
+    /**
+      * Special styles
+    **/
+    &.fullwidth {
+        th:first-child,
+        td:first-child {
+            padding-left: $fullWidthPaddingLeft;
+        }
+
+        .pagination-wrapper {
+            padding-left: $fullWidthPaddingLeft - 10px;
+            padding-right: $overflowIconSpacing;
+        }
+        .overflow + .pagination-wrapper {
+            padding-right: 0;
+        }
+    }
+}
