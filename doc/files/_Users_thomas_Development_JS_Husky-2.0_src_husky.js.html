@@ -43,15 +43,21 @@
             
                 <li><a href="../classes/base.html">base</a></li>
             
+                <li><a href="../classes/ExtensionManager.html">ExtensionManager</a></li>
+            
                 <li><a href="../classes/Husky.html">Husky</a></li>
             
                 <li><a href="../classes/Logger.html">Logger</a></li>
+            
+                <li><a href="../classes/Sandbox.html">Sandbox</a></li>
             
             </ul>
 
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/husky.html">husky</a></li>
+            
+                <li><a href="../modules/husky_extensions.html">husky/extensions</a></li>
             
             </ul>
         </div>
@@ -102,19 +108,32 @@
  *
  * @module husky
  */
-define([&#x27;./base&#x27;, &#x27;./logger&#x27;], function(base, Logger) {
+define([&#x27;module&#x27;, &#x27;./base&#x27;, &#x27;./extension&#x27;, &#x27;./logger&#x27;], function(module, base, ExtensionManager, Logger) {
 
     &#x27;use strict&#x27;;
 
+    // auto configure husky path... if not set yet...
+    if (!require.s.contexts._.config.paths.husky) {
+        require.config({
+            paths: {
+                husky: module.id.replace(/\/husky$/, &#x27;&#x27;)
+            }
+        });
+    }
+
     // app default config
     var defaults = {
-        debug: false
+        debug: false,
+        sources: {
+            default: &#x27;./husky_components&#x27;
+        }
     };
 
     /**
      * @class Husky
      * @param {Object} [config] Configuration object
      * @param {Boolean} [config.debug] Enable debug mode
+     * @return {Husky} The Husky app instance
      * @constructor
      */
     function Husky(config) {
@@ -123,12 +142,15 @@ define([&#x27;./base&#x27;, &#x27;./logger&#x27;], function(base, Logger) {
             return new Husky(config);
         }
 
+        // private
+        var extensionManager = new ExtensionManager(),
+            baseSandbox = Object.create(base);
+
         /**
          * @property config
          * @type {Object}
          */
-        this.config = config || {};
-        base.util.defaults(this.config, defaults);
+        this.config = base.util.defaults(config || {}, defaults);
 
         /**
          * @property ref
@@ -142,11 +164,73 @@ define([&#x27;./base&#x27;, &#x27;./logger&#x27;], function(base, Logger) {
          */
         this.logger = new Logger(this.ref);
 
+        /**
+         * The application &#x60;core&#x60; property is just a namespace
+         * used by the extensions to add new features.
+         *
+         * @property core
+         * @type {Object}
+         */
+        this.core = Object.create(base);
+
+        /**
+         * Sandboxes are a way to implement the facade pattern on top of the features provided by &#x60;core&#x60;.
+         *
+         * The &#x60;sandbox&#x60; property of an Husky application is just an Object that will be used
+         * as a blueprint, once the app is started, to create new instances
+         * of sandboxed environments for the components.
+         *
+         * @property sandbox
+         * @type {Object}
+         */
+        this.sandbox = baseSandbox;
+
+        /**
+         * Tells the app to load the given extension.
+         * Husky extensions are loaded into the app during init.
+         *
+         * They are responsible for:
+         *  - resolving &amp; loading external dependencies via requirejs
+         *  - they have direct access to the app internals
+         *  - they are here to add new features to the app that are made
+         *    available through the sandboxes to the components
+         *
+         * This method can only be called before the App is actually started.
+         * Note that the App is started when its &#x60;start&#x60; method is called.
+         *
+         * @method use
+         * @param  {String | Object | Function} ref The reference of the extension
+         * @return {Husky} The Husky app instance
+         * @chainable
+         */
+        this.use = function(ref) {
+            extensionManager.add({ ref: ref, context: this });
+            return this;
+        };
+
+        /**
+         * @method start
+         * @return {Promise}
+         */
+        this.start = function() {
+
+
+
+
+            // Return the extension manager init promise that allows us
+            // to keep track of the loading process ...
+            return extensionManager.init();
+        };
+
         // enable logger, if debug mode is enabled
         if (!!config.debug) {
             this.logger.enable();
         }
 
+        this.use(&#x27;husky/extensions/mediator&#x27;);
+        this.use(&#x27;husky/extensions/components&#x27;);
+
+        return this;
     }
 
     return Husky;

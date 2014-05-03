@@ -37,6 +37,8 @@ define(function() {
         this.logWriter = noop;
         this.warnWriter = noop;
         this.errorWriter = noop;
+
+        return this;
     }
 
     /**

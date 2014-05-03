@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Logger</title>
+    <title>ExtensionManager</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -94,7 +94,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>Logger Class</h1>
+                        <h1>ExtensionManager Class</h1>
 <div class="box meta">
     
 
@@ -102,7 +102,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l18"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:18</code></a>
+            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l19"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:19</code></a>
         </div>
     
 
@@ -124,21 +124,11 @@
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_Logger" class="method item">
-    <h3 class="name"><code>Logger</code></h3>
+        <div id="method_ExtensionManager" class="method item">
+    <h3 class="name"><code>ExtensionManager</code></h3>
 
     
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>name</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
+        <span class="paren">()</span>
     
 
     
@@ -166,7 +156,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l18"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:18</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l19"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:19</code></a>
         
         </p>
 
@@ -180,30 +170,6 @@
         
     </div>
 
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">name</code>
-                        <span class="type">String</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                        <p>Name of Logger instance</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
     
 
     
@@ -239,42 +205,28 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_enable">enable</a>
+                                <a href="#method_add">add</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_error">error</a>
+                                <a href="#method_init">init</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_isEnabled">isEnabled</a>
+                                <a href="#method_onFailure">onFailure</a>
 
                                 
                                 
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_log">log</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_setName">setName</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
-                                <a href="#method_warn">warn</a>
+                                <a href="#method_onReady">onReady</a>
 
                                 
                                 
@@ -291,14 +243,7 @@
                     <ul class="index-list properties">
                         
                             <li class="index-item property">
-                                <a href="#property_enabled">enabled</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item property">
-                                <a href="#property_name">name</a>
+                                <a href="#property_initStatus">initStatus</a>
 
                                 
                                 
@@ -318,16 +263,26 @@
                 <h2 class="off-left">Methods</h2>
 
                 
-                    <div id="method_enable" class="method item">
-    <h3 class="name"><code>enable</code></h3>
+                    <div id="method_add" class="method item">
+    <h3 class="name"><code>add</code></h3>
 
     
-        <span class="paren">()</span>
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>extension</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
     
 
     
         <span class="returns-inline">
-            <span class="type"><a href="../classes/Logger.html" class="crosslink">Logger</a></span>
+            <span class="type"><a href="../classes/ExtensionManager.html" class="crosslink">ExtensionManager</a></span>
         </span>
     
 
@@ -354,7 +309,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l60"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:60</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l37"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:37</code></a>
         
         </p>
 
@@ -366,83 +321,6 @@
 
     <div class="description">
         
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type"><a href="../classes/Logger.html" class="crosslink">Logger</a></span>:
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
-
-                
-                    <div id="method_error" class="method item">
-    <h3 class="name"><code>error</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>error</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l96"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:96</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Writes an error into the browser&#39;s console (if present).</p>
-
     </div>
 
     
@@ -453,12 +331,10 @@
             
                 <li class="param">
                     
-                        <code class="param-name">error</code>
-                        <span class="type"></span>
+                        <code class="param-name">extension</code>
+                        <span class="type">Object</span>
                     
 
-                    
-                        <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
                     
 
                     <div class="param-description">
@@ -473,13 +349,25 @@
     
 
     
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/ExtensionManager.html" class="crosslink">ExtensionManager</a></span>:
+                    
+                
+            </div>
+        </div>
+    
 
     
 </div>
 
                 
-                    <div id="method_isEnabled" class="method item">
-    <h3 class="name"><code>isEnabled</code></h3>
+                    <div id="method_init" class="method item">
+    <h3 class="name"><code>init</code></h3>
 
     
         <span class="paren">()</span>
@@ -487,7 +375,7 @@
 
     
         <span class="returns-inline">
-            <span class="type">Boolean</span>
+            <span class="type">Promise</span>
         </span>
     
 
@@ -514,7 +402,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l44"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:44</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l78"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:78</code></a>
         
         </p>
 
@@ -537,7 +425,7 @@
             <div class="returns-description">
                 
                     
-                        <span class="type">Boolean</span>:
+                        <span class="type">Promise</span>:
                     
                 
             </div>
@@ -548,8 +436,8 @@
 </div>
 
                 
-                    <div id="method_log" class="method item">
-    <h3 class="name"><code>log</code></h3>
+                    <div id="method_onFailure" class="method item">
+    <h3 class="name"><code>onFailure</code></h3>
 
     
         <div class="args">
@@ -557,7 +445,7 @@
             
                 <li class="arg">
                     
-                        <code>message</code>
+                        <code>fn</code>
                     
                 </li>
             
@@ -565,6 +453,10 @@
         </div>
     
 
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/ExtensionManager.html" class="crosslink">ExtensionManager</a></span>
+        </span>
     
 
     
@@ -590,7 +482,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l78"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:78</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l68"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:68</code></a>
         
         </p>
 
@@ -601,8 +493,7 @@
     </div>
 
     <div class="description">
-        <p>Writes a log message into the browser&#39;s console (if present).</p>
-
+        
     </div>
 
     
@@ -613,12 +504,10 @@
             
                 <li class="param">
                     
-                        <code class="param-name">message</code>
-                        <span class="type"></span>
+                        <code class="param-name">fn</code>
+                        <span class="type">Function</span>
                     
 
-                    
-                        <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
                     
 
                     <div class="param-description">
@@ -633,13 +522,25 @@
     
 
     
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/ExtensionManager.html" class="crosslink">ExtensionManager</a></span>:
+                    
+                
+            </div>
+        </div>
+    
 
     
 </div>
 
                 
-                    <div id="method_setName" class="method item">
-    <h3 class="name"><code>setName</code></h3>
+                    <div id="method_onReady" class="method item">
+    <h3 class="name"><code>onReady</code></h3>
 
     
         <div class="args">
@@ -647,7 +548,7 @@
             
                 <li class="arg">
                     
-                        <code>name</code>
+                        <code>fn</code>
                     
                 </li>
             
@@ -655,6 +556,10 @@
         </div>
     
 
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/ExtensionManager.html" class="crosslink">ExtensionManager</a></span>
+        </span>
     
 
     
@@ -680,7 +585,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l52"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:52</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l58"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:58</code></a>
         
         </p>
 
@@ -702,101 +607,10 @@
             
                 <li class="param">
                     
-                        <code class="param-name">name</code>
-                        <span class="type">String</span>
+                        <code class="param-name">fn</code>
+                        <span class="type">Function</span>
                     
 
-                    
-
-                    <div class="param-description">
-                        <p>Name of Logger instance</p>
-
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="method_warn" class="method item">
-    <h3 class="name"><code>warn</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>warning</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l87"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:87</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Writes a warning into the browser&#39;s console (if present).</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">warning</code>
-                        <span class="type"></span>
-                    
-
-                    
-                        <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
                     
 
                     <div class="param-description">
@@ -810,6 +624,18 @@
         </div>
     
 
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/ExtensionManager.html" class="crosslink">ExtensionManager</a></span>:
+                    
+                
+            </div>
+        </div>
     
 
     
@@ -824,9 +650,9 @@
                 <h2 class="off-left">Properties</h2>
 
                 
-                    <div id="property_enabled" class="property item">
-    <h3 class="name"><code>enabled</code></h3>
-    <span class="type">Boolean</span>
+                    <div id="property_initStatus" class="property item">
+    <h3 class="name"><code>initStatus</code></h3>
+    <span class="type">Deferred</span>
 
     
 
@@ -847,51 +673,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l31"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:31</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        
-    </div>
-
-    
-
-    
-
-    
-</div>
-
-                
-                    <div id="property_name" class="property item">
-    <h3 class="name"><code>name</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_logger.js.html#l25"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;logger.js:25</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extension.js.html#l25"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extension.js:25</code></a>
         
         </p>
 

@@ -50,6 +50,7 @@
         var base = {};
 
         base.dom = {
+
             /**
              * @method dom.find
              */
@@ -67,6 +68,7 @@
         };
 
         base.data = {
+
             /**
              * @method data.deferred
              */
@@ -79,6 +81,12 @@
         };
 
         base.util = {
+
+            /**
+             * @method util.compact
+             */
+            compact: _.compact,
+
             /**
              * @method util.defaults
              */
@@ -87,12 +95,22 @@
             /**
              * @method util.each
              */
-            each: $.each,
+            each: _.each,
 
             /**
              * @method util.extend
              */
             extend: $.extend,
+
+            /**
+             * @method util.include
+             */
+            include: _.include,
+
+            /**
+             * @method util.reject
+             */
+            reject: _.reject,
 
             /**
              * @method util.uniq
@@ -110,15 +128,6 @@
             decamelize: function(camelCase, delimiter) {
                 delimiter = (delimiter === undefined) ? '_' : delimiter;
                 return camelCase.replace(/([A-Z])/g, delimiter + '$1').toLowerCase();
-            }
-        };
-
-        base.events = {
-            listen: function(context, events, selector, fn) {
-                return $(context).on(events, selector, fn);
-            },
-            bindAll: function() {
-                return _.bindAll.apply(this, arguments);
             }
         };
 

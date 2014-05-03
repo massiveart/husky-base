@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>/Users/thomas/Development/JS/Husky-2.0/src/logger.js</title>
+    <title>husky/extensions</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -94,118 +94,53 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: /Users/thomas/Development/JS/Husky-2.0/src/logger.js</h1>
+                        <h1>husky_extensions Module</h1>
+<div class="box clearfix meta">
+    
 
-<div class="file">
-    <pre class="code prettyprint linenums">
-/**
- * This file is part of Husky, a scalable, event-driven JavaScript web applications framework.
- *
- * (c) Thomas Schedler &lt;thomas@chirimoya.at&gt;
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- *
- * @module husky
- */
-define(function() {
+    
 
-    &#x27;use strict&#x27;;
+    
+        <div class="foundat">
+            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extensions_mediator.js.html#l71"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extensions&#x2F;mediator.js:71</code></a>
+        </div>
+    
 
-    var noop = function() {},
-        console = window.console || {};
+    
+</div>
 
-    /**
-     * @class Logger
-     * @param {String} name Name of Logger instance
-     * @constructor
-     */
-    function Logger(name) {
 
-        /**
-         * @property name
-         * @type {String}
-         */
-        this.name = name;
 
-        /**
-         * @property enabled
-         * @type {Boolean}
-         */
-        this.enabled = false;
+<div class="box intro">
+    <p>This file is part of Husky, a scalable, event-driven JavaScript web applications framework.</p>
+<p>(c) Thomas Schedler <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#116;&#x68;&#111;&#x6d;&#x61;&#115;&#x40;&#x63;&#104;&#x69;&#x72;&#x69;&#x6d;&#x6f;&#121;&#97;&#x2e;&#x61;&#x74;">&#116;&#x68;&#111;&#x6d;&#x61;&#115;&#x40;&#x63;&#104;&#x69;&#x72;&#x69;&#x6d;&#x6f;&#121;&#97;&#x2e;&#x61;&#x74;</a></p>
+<p>This source file is subject to the MIT license that is bundled
+with this source code in the file LICENSE.</p>
 
-        this.logWriter = noop;
-        this.warnWriter = noop;
-        this.errorWriter = noop;
+</div>
 
-        return this;
-    }
 
-    /**
-     * @method isEnabled
-     * @return {Boolean}
-     */
-    Logger.prototype.isEnabled = function() {
-        return this.enabled;
-    };
 
-    /**
-     * @method setName
-     * @param {String} name Name of Logger instance
-     */
-    Logger.prototype.setName = function(name) {
-        this.name = name;
-    };
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+        
+            <p>This module provides the following classes:</p>
 
-    /**
-     * @method enable
-     * @return {Logger}
-     */
-    Logger.prototype.enable = function() {
-        this.logWriter = (console.log || noop);
-        this.warnWriter = (console.warn || this.logWriter);
-        this.errorWriter = (console.error || this.logWriter);
-        this.enabled = true;
-        return this;
-    };
+            <ul class="module-classes">
+            
+                <li class="module-class">
+                    <a href="../classes/Sandbox.html">
+                        Sandbox
+                    </a>
+                </li>
+            
+            </ul>
+        
+    </div>
 
-    Logger.prototype.write = function(output, args) {
-        var parameters = Array.prototype.slice.call(args);
-        parameters.unshift(this.name + &#x27;:&#x27;);
-        output.apply(console, parameters);
-    };
-
-    /**
-     * Writes a log message into the browser&#x27;s console (if present).
-     * @method log
-     * @param {*} message*
-     */
-    Logger.prototype.log = function() {
-        this.write(this.logWriter, arguments);
-    };
-
-    /**
-     * Writes a warning into the browser&#x27;s console (if present).
-     * @method warn
-     * @param {*} warning*
-     */
-    Logger.prototype.warn = function() {
-        this.write(this.warnWriter, arguments);
-    };
-
-    /**
-     * Writes an error into the browser&#x27;s console (if present).
-     * @method error
-     * @param {*} error*
-     */
-    Logger.prototype.error = function() {
-        this.write(this.errorWriter, arguments);
-    };
-
-    return Logger;
-});
-
-    </pre>
+    <div class="yui3-u-1-2">
+        
+    </div>
 </div>
 
                     </div>

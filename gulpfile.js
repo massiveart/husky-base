@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     yuidoc = require("gulp-yuidoc"),
 
     paths = {
-        src: './src/*.js',
+        src: './src/**/*.js',
         scss: './scss/husky.scss'
     };
 

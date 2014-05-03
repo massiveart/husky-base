@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>/Users/thomas/Development/JS/Husky-2.0/src/extensions/components.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
-    <link rel="stylesheet" href="./assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="./assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
     <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
 </head>
 <body class="yui3-skin-sam">
@@ -15,7 +15,7 @@
     <div id="hd" class="yui3-g header">
         <div class="yui3-u-3-4">
             
-                <h1><img src="./assets/css/logo.png" title=""></h1>
+                <h1><img src="../assets/css/logo.png" title=""></h1>
             
         </div>
         <div class="yui3-u-1-4 version">
@@ -41,23 +41,23 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="./classes/base.html">base</a></li>
+                <li><a href="../classes/base.html">base</a></li>
             
-                <li><a href="./classes/ExtensionManager.html">ExtensionManager</a></li>
+                <li><a href="../classes/ExtensionManager.html">ExtensionManager</a></li>
             
-                <li><a href="./classes/Husky.html">Husky</a></li>
+                <li><a href="../classes/Husky.html">Husky</a></li>
             
-                <li><a href="./classes/Logger.html">Logger</a></li>
+                <li><a href="../classes/Logger.html">Logger</a></li>
             
-                <li><a href="./classes/Sandbox.html">Sandbox</a></li>
+                <li><a href="../classes/Sandbox.html">Sandbox</a></li>
             
             </ul>
 
             <ul id="api-modules" class="apis modules">
             
-                <li><a href="./modules/husky.html">husky</a></li>
+                <li><a href="../modules/husky.html">husky</a></li>
             
-                <li><a href="./modules/husky_extensions.html">husky/extensions</a></li>
+                <li><a href="../modules/husky_extensions.html">husky/extensions</a></li>
             
             </ul>
         </div>
@@ -94,27 +94,45 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                            <div class="apidocs">
-        <div id="docs-main" class="content">
-            <p>
-            Browse to a module or class using the sidebar to view its API documentation.
-            </p>
+                        <h1 class="file-heading">File: /Users/thomas/Development/JS/Husky-2.0/src/extensions/components.js</h1>
 
-            <h2>Keyboard Shortcuts</h2>
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * This file is part of Husky, a scalable, event-driven JavaScript web applications framework.
+ *
+ * (c) Thomas Schedler &lt;thomas@chirimoya.at&gt;
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ *
+ * @module husky/extensions
+ */
+define(&#x27;husky/extensions/components&#x27;, function() {
 
-            <ul>
-                <li><p>Press <kbd>s</kbd> to focus the API search box.</p></li>
+    &#x27;use strict&#x27;;
 
-                <li><p>Use <kbd>Up</kbd> and <kbd>Down</kbd> to select classes, modules, and search results.</p></li>
+    // extension definition
 
-                <li class="mac-only"><p>With the API search box or sidebar focused, use <kbd><span class="cmd">&#x2318;</span>-Left</kbd> or <kbd><span class="cmd">&#x2318;</span>-Right</kbd> to switch sidebar tabs.</p></li>
+    return {
 
-                <li class="pc-only"><p>With the API search box or sidebar focused, use <kbd>Ctrl+Left</kbd> and <kbd>Ctrl+Right</kbd> to switch sidebar tabs.</p></li>
-            </ul>
-        </div>
-    </div>
+        name: &#x27;components&#x27;,
 
+        require: {
+            paths: {
+                text: &#x27;bower_components/requirejs-text/text&#x27;
+            }
+        },
 
+        initialize: function(app) {
+
+        }
+    };
+
+});
+
+    </pre>
+</div>
 
                     </div>
                 </div>
@@ -122,13 +140,13 @@
         </div>
     </div>
 </div>
-<script src="./assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
-<script src="./assets/js/yui-prettify.js"></script>
-<script src="./assets/../api.js"></script>
-<script src="./assets/js/api-filter.js"></script>
-<script src="./assets/js/api-list.js"></script>
-<script src="./assets/js/api-search.js"></script>
-<script src="./assets/js/apidocs.js"></script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
 </body>
 </html>

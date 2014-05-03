@@ -43,15 +43,21 @@
             
                 <li><a href="../classes/base.html">base</a></li>
             
+                <li><a href="../classes/ExtensionManager.html">ExtensionManager</a></li>
+            
                 <li><a href="../classes/Husky.html">Husky</a></li>
             
                 <li><a href="../classes/Logger.html">Logger</a></li>
+            
+                <li><a href="../classes/Sandbox.html">Sandbox</a></li>
             
             </ul>
 
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/husky.html">husky</a></li>
+            
+                <li><a href="../modules/husky_extensions.html">husky/extensions</a></li>
             
             </ul>
         </div>
@@ -96,7 +102,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l20"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:20</code></a>
+            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l32"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:32</code></a>
         </div>
     
 
@@ -136,6 +142,10 @@
     
 
     
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Husky.html" class="crosslink">Husky</a></span>
+        </span>
+    
 
     
 
@@ -160,7 +170,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l20"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:20</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l32"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:32</code></a>
         
         </p>
 
@@ -221,6 +231,20 @@
     
 
     
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Husky.html" class="crosslink">Husky</a></span>:
+                    
+                    <p>The Husky app instance</p>
+
+                
+            </div>
+        </div>
+    
 
     
 </div>
@@ -232,6 +256,8 @@
     <ul class="api-class-tabs">
         <li class="api-class-tab index"><a href="#index">Index</a></li>
 
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
         
         
             <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
@@ -245,6 +271,28 @@
             <h2 class="off-left">Item Index</h2>
 
             
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method">
+                                <a href="#method_start">start</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_use">use</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
 
             
                 <div class="index-section properties">
@@ -254,6 +302,13 @@
                         
                             <li class="index-item property">
                                 <a href="#property_config">config</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_core">core</a>
 
                                 
                                 
@@ -273,6 +328,13 @@
                                 
                             </li>
                         
+                            <li class="index-item property">
+                                <a href="#property_sandbox">sandbox</a>
+
+                                
+                                
+                            </li>
+                        
                     </ul>
                 </div>
             
@@ -282,6 +344,201 @@
             
         </div>
 
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_start" class="method item">
+    <h3 class="name"><code>start</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Promise</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l111"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:111</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Promise</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_use" class="method item">
+    <h3 class="name"><code>use</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ref</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Husky.html" class="crosslink">Husky</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l88"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:88</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Tells the app to load the given extension.
+Husky extensions are loaded into the app during init.</p>
+<p>They are responsible for:</p>
+<ul>
+<li>resolving &amp; loading external dependencies via requirejs</li>
+<li>they have direct access to the app internals</li>
+<li>they are here to add new features to the app that are made
+available through the sandboxes to the components</li>
+</ul>
+<p>This method can only be called before the App is actually started.
+Note that the App is started when its <code>start</code> method is called.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ref</code>
+                        <span class="type">String | Object | Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The reference of the extension</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Husky.html" class="crosslink">Husky</a></span>:
+                    
+                    <p>The Husky app instance</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+            </div>
         
 
         
@@ -312,7 +569,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l32"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:32</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l49"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:49</code></a>
         
         </p>
 
@@ -323,6 +580,52 @@
 
     <div class="description">
         
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_core" class="property item">
+    <h3 class="name"><code>core</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l67"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:67</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The application <code>core</code> property is just a namespace
+used by the extensions to add new features.</p>
+
     </div>
 
     
@@ -356,7 +659,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l45"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:45</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l61"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:61</code></a>
         
         </p>
 
@@ -400,7 +703,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l39"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:39</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l55"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:55</code></a>
         
         </p>
 
@@ -411,6 +714,54 @@
 
     <div class="description">
         
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_sandbox" class="property item">
+    <h3 class="name"><code>sandbox</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l76"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:76</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sandboxes are a way to implement the facade pattern on top of the features provided by <code>core</code>.</p>
+<p>The <code>sandbox</code> property of an Husky application is just an Object that will be used
+as a blueprint, once the app is started, to create new instances
+of sandboxed environments for the components.</p>
+
     </div>
 
     
