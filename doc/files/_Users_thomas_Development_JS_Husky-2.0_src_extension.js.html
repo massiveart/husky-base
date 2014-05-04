@@ -308,7 +308,7 @@ define([&#x27;./base&#x27;, &#x27;./logger&#x27;], function(base, Logger) {
             },
 
             reject = function(err) {
-                logger.error(&#x27;Error loading ext:&#x27;, extension, err);
+                logger.error(&#x27;Error loading extension:&#x27;, extension, err);
                 dfd.reject(err);
             };
 
