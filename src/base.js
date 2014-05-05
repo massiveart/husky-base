@@ -83,6 +83,11 @@
         base.util = {
 
             /**
+             * @method util.clone
+             */
+            clone: _.clone,
+
+            /**
              * @method util.compact
              */
             compact: _.compact,
@@ -93,6 +98,11 @@
             defaults: _.defaults,
 
             /**
+             * @method util.defer
+             */
+            defer: _.defer,
+
+            /**
              * @method util.each
              */
             each: _.each,
@@ -100,12 +110,32 @@
             /**
              * @method util.extend
              */
-            extend: $.extend,
+            extend: _.extend,
+
+            /**
+             * @method util.has
+             */
+            has: _.has,
 
             /**
              * @method util.include
              */
             include: _.include,
+
+            /**
+             * @method util.invoke
+             */
+            invoke: _.invoke,
+
+            /**
+             * @method util.isFunction
+             */
+            isFunction: _.isFunction,
+
+            /**
+             * @method util.isObject
+             */
+            isObject: _.isObject,
 
             /**
              * @method util.reject

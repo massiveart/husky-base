@@ -13,18 +13,7 @@ require(['src/husky'], function(husky) {
         var app = husky({ debug: true });
         app.start().then(function() {
             app.logger.log(app);
-            app.sandbox.on('event.test', function() {
-                app.logger.log('listener called');
-            });
-            app.sandbox.emit('event.test');
-
-            app.sandbox.emit(['husky', 'sandbox', 'stop'], app.sandbox);
-
-            app.sandbox.emit('event.test');
-
-            app.sandbox.emit(['husky', 'sandbox', 'pause'], app.sandbox);
-
-            app.logger.log('Bootstrapping the application took ' + zone.time() + ' of CPU time');
+            app.logger.log('Bootstrapping the application took ' + zone.time() + ' of CPU time.');
         }, function() {
             app.logger.log(arguments);
         });
@@ -38,7 +27,7 @@ require(['src/husky'], function(husky) {
      */
     var profilingZone = (function() {
         var time = 0,
-        // use the high-res timer if available
+            // use the high-res timer if available
             timer = performance ?
                 performance.now.bind(performance) :
                 Date.now.bind(Date);

@@ -38,6 +38,7 @@ define(['./base', './logger'], function(base, Logger) {
      * @method add
      * @param {Object} extension
      * @return {ExtensionManager}
+     * @chainable
      */
     ExtensionManager.prototype.add = function(extension) {
 
@@ -59,6 +60,7 @@ define(['./base', './logger'], function(base, Logger) {
      * @method onReady
      * @param {Function} fn
      * @return {ExtensionManager}
+     * @chainable
      */
     ExtensionManager.prototype.onReady = function(fn) {
         this.initStatus.then(fn);
@@ -69,6 +71,7 @@ define(['./base', './logger'], function(base, Logger) {
      * @method onFailure
      * @param {Function} fn
      * @return {ExtensionManager}
+     * @chainable
      */
     ExtensionManager.prototype.onFailure = function(fn) {
         this.initStatus.fail(fn);

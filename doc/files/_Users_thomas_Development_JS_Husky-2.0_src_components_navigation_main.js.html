@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>/Users/thomas/Development/JS/Husky-2.0/src/logger.js</title>
+    <title>/Users/thomas/Development/JS/Husky-2.0/src/components/navigation/main.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -98,7 +98,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: /Users/thomas/Development/JS/Husky-2.0/src/logger.js</h1>
+                        <h1 class="file-heading">File: /Users/thomas/Development/JS/Husky-2.0/src/components/navigation/main.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -110,105 +110,19 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  *
- * @module husky
+ * @module husky/components
  */
 define(function() {
 
     &#x27;use strict&#x27;;
 
-    var noop = function() {},
-        console = window.console || {};
+    return {
 
-    /**
-     * @class Logger
-     * @param {String} name Name of Logger instance
-     * @constructor
-     */
-    function Logger(name) {
-
-        /**
-         * @property name
-         * @type {String}
-         */
-        this.name = name;
-
-        /**
-         * @property enabled
-         * @type {Boolean}
-         */
-        this.enabled = false;
-
-        this.logWriter = noop;
-        this.warnWriter = noop;
-        this.errorWriter = noop;
-
-        return this;
-    }
-
-    /**
-     * @method isEnabled
-     * @return {Boolean}
-     * @chainable
-     */
-    Logger.prototype.isEnabled = function() {
-        return this.enabled;
+        initialize: function(options) {
+            this.sandbox.logger.log(options);
+            this.sandbox.logger.log(this);
+        }
     };
-
-    /**
-     * @method setName
-     * @param {String} name Name of Logger instance
-     */
-    Logger.prototype.setName = function(name) {
-        this.name = name;
-    };
-
-    /**
-     * @method enable
-     * @return {Logger}
-     * @chainable
-     */
-    Logger.prototype.enable = function() {
-        this.logWriter = (console.log || noop);
-        this.warnWriter = (console.warn || this.logWriter);
-        this.errorWriter = (console.error || this.logWriter);
-        this.enabled = true;
-        return this;
-    };
-
-    Logger.prototype.write = function(output, args) {
-        var parameters = Array.prototype.slice.call(args);
-        parameters.unshift(this.name + &#x27;:&#x27;);
-        output.apply(console, parameters);
-    };
-
-    /**
-     * Writes a log message into the browser&#x27;s console (if present).
-     * @method log
-     * @param {*} message*
-     */
-    Logger.prototype.log = function() {
-        this.write(this.logWriter, arguments);
-    };
-
-    /**
-     * Writes a warning into the browser&#x27;s console (if present).
-     * @method warn
-     * @param {*} warning*
-     */
-    Logger.prototype.warn = function() {
-        this.write(this.warnWriter, arguments);
-    };
-
-    /**
-     * Writes an error into the browser&#x27;s console (if present).
-     * @method error
-     * @param {*} error*
-     */
-    Logger.prototype.error = function() {
-        this.write(this.errorWriter, arguments);
-    };
-
-    return Logger;
 });
 
     </pre>

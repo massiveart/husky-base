@@ -12,7 +12,9 @@
         "sinon": false,
         "runs": false,
         "waitsFor": false,
-        "jasmine": false
+        "jasmine": false,
+        "zone": false,
+        "performance": false
     },
     "bitwise": true,
     "camelcase": true,

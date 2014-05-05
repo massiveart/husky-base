@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>/Users/thomas/Development/JS/Husky-2.0/src/logger.js</title>
+    <title>husky/components</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -98,120 +98,41 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: /Users/thomas/Development/JS/Husky-2.0/src/logger.js</h1>
+                        <h1>husky_components Module</h1>
+<div class="box clearfix meta">
+    
 
-<div class="file">
-    <pre class="code prettyprint linenums">
-/**
- * This file is part of Husky, a scalable, event-driven JavaScript web applications framework.
- *
- * (c) Thomas Schedler &lt;thomas@chirimoya.at&gt;
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- *
- * @module husky
- */
-define(function() {
+    
 
-    &#x27;use strict&#x27;;
+    
+        <div class="foundat">
+            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_components_header_main.js.html#l1"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;components&#x2F;header&#x2F;main.js:1</code></a>
+        </div>
+    
 
-    var noop = function() {},
-        console = window.console || {};
+    
+</div>
 
-    /**
-     * @class Logger
-     * @param {String} name Name of Logger instance
-     * @constructor
-     */
-    function Logger(name) {
 
-        /**
-         * @property name
-         * @type {String}
-         */
-        this.name = name;
 
-        /**
-         * @property enabled
-         * @type {Boolean}
-         */
-        this.enabled = false;
+<div class="box intro">
+    <p>This file is part of Husky, a scalable, event-driven JavaScript web applications framework.</p>
+<p>(c) Thomas Schedler <a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#116;&#104;&#x6f;&#109;&#x61;&#x73;&#x40;&#x63;&#104;&#105;&#114;&#105;&#109;&#111;&#121;&#x61;&#x2e;&#97;&#x74;">&#116;&#104;&#x6f;&#109;&#x61;&#x73;&#x40;&#x63;&#104;&#105;&#114;&#105;&#109;&#111;&#121;&#x61;&#x2e;&#97;&#x74;</a></p>
+<p>This source file is subject to the MIT license that is bundled
+with this source code in the file LICENSE.</p>
 
-        this.logWriter = noop;
-        this.warnWriter = noop;
-        this.errorWriter = noop;
+</div>
 
-        return this;
-    }
 
-    /**
-     * @method isEnabled
-     * @return {Boolean}
-     * @chainable
-     */
-    Logger.prototype.isEnabled = function() {
-        return this.enabled;
-    };
 
-    /**
-     * @method setName
-     * @param {String} name Name of Logger instance
-     */
-    Logger.prototype.setName = function(name) {
-        this.name = name;
-    };
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+        
+    </div>
 
-    /**
-     * @method enable
-     * @return {Logger}
-     * @chainable
-     */
-    Logger.prototype.enable = function() {
-        this.logWriter = (console.log || noop);
-        this.warnWriter = (console.warn || this.logWriter);
-        this.errorWriter = (console.error || this.logWriter);
-        this.enabled = true;
-        return this;
-    };
-
-    Logger.prototype.write = function(output, args) {
-        var parameters = Array.prototype.slice.call(args);
-        parameters.unshift(this.name + &#x27;:&#x27;);
-        output.apply(console, parameters);
-    };
-
-    /**
-     * Writes a log message into the browser&#x27;s console (if present).
-     * @method log
-     * @param {*} message*
-     */
-    Logger.prototype.log = function() {
-        this.write(this.logWriter, arguments);
-    };
-
-    /**
-     * Writes a warning into the browser&#x27;s console (if present).
-     * @method warn
-     * @param {*} warning*
-     */
-    Logger.prototype.warn = function() {
-        this.write(this.warnWriter, arguments);
-    };
-
-    /**
-     * Writes an error into the browser&#x27;s console (if present).
-     * @method error
-     * @param {*} error*
-     */
-    Logger.prototype.error = function() {
-        this.write(this.errorWriter, arguments);
-    };
-
-    return Logger;
-});
-
-    </pre>
+    <div class="yui3-u-1-2">
+        
+    </div>
 </div>
 
                     </div>

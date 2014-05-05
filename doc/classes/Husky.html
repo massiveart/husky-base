@@ -43,6 +43,8 @@
             
                 <li><a href="../classes/base.html">base</a></li>
             
+                <li><a href="../classes/Component.html">Component</a></li>
+            
                 <li><a href="../classes/ExtensionManager.html">ExtensionManager</a></li>
             
                 <li><a href="../classes/Husky.html">Husky</a></li>
@@ -56,6 +58,8 @@
             <ul id="api-modules" class="apis modules">
             
                 <li><a href="../modules/husky.html">husky</a></li>
+            
+                <li><a href="../modules/husky_components.html">husky/components</a></li>
             
                 <li><a href="../modules/husky_extensions.html">husky/extensions</a></li>
             
@@ -102,13 +106,13 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l32"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:32</code></a>
+            Defined in: <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extensions_components.js.html#l442"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extensions&#x2F;components.js:442</code></a>
         </div>
     
 
     
         
-            Module: <a href="../modules/husky.html">husky</a>
+            Module: <a href="../modules/husky_extensions.html">husky/extensions</a>
         
     
 
@@ -170,7 +174,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l32"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:32</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extensions_components.js.html#l442"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extensions&#x2F;components.js:442</code></a>
         
         </p>
 
@@ -277,7 +281,56 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_components.addSource">components.addSource</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_components.addType">components.addType</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_components.after">components.after</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_components.before">components.before</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_sandboxes.create">sandboxes.create</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_sandboxes.get">sandboxes.get</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_start">start</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_stop">stop</a>
 
                                 
                                 
@@ -299,6 +352,13 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties">
+                        
+                            <li class="index-item property">
+                                <a href="#property_components">components</a>
+
+                                
+                                
+                            </li>
                         
                             <li class="index-item property">
                                 <a href="#property_config">config</a>
@@ -335,6 +395,13 @@
                                 
                             </li>
                         
+                            <li class="index-item property">
+                                <a href="#property_sandboxes">sandboxes</a>
+
+                                
+                                
+                            </li>
+                        
                     </ul>
                 </div>
             
@@ -347,6 +414,735 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_components.addSource" class="method item">
+    <h3 class="name"><code>components.addSource</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>name</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>baseUrl</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Husky.html" class="crosslink">Husky</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <span class="flag chainable">chainable</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l157"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:157</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Adds a new source for components.
+A Component source is an endpoint (basically a URL)
+that is the root of a component repository.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The name of the source.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">baseUrl</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The base url for those components.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Husky.html" class="crosslink">Husky</a></span>:
+                    
+                    <p>The Husky app instance</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_components.addType" class="method item">
+    <h3 class="name"><code>components.addType</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>type</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>def</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extensions_components.js.html#l482"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extensions&#x2F;components.js:482</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Register a Component Type (experimental).
+Components type ca be used to encapsulate many custom components behaviours.
+They will be then used while declaring your components as follows:</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">type</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A string that will identify the component type.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">def</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>A constructor the this component type</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <p> define({
+     type: &#39;myComponentType&#39;,
+     // component declaration...
+ });</p>
+
+            </div>
+        </div>
+    
+</div>
+
+                
+                    <div id="method_components.after" class="method item">
+    <h3 class="name"><code>components.after</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>methodName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>fn</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extensions_components.js.html#l470"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extensions&#x2F;components.js:470</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Same as components.before, but executed after the method invocation.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">methodName</code>
+                        <span class="type">type</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>eg. &#39;initialize&#39;, &#39;remove&#39;</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">fn</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Actual function to run</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_components.before" class="method item">
+    <h3 class="name"><code>components.before</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>methodName</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>fn</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_extensions_components.js.html#l446"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;extensions&#x2F;components.js:446</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Registers a function that will be executed before the associated
+Component method is called.</p>
+<p>Once registered, every time a component method will be called with the
+<code>invokeWithCallbacks</code> method the registered callbacks will execute accordingly.</p>
+<p>The callback functions can return a promise if required in order to
+postpone the execution of the called function up to when the all
+registered callbacks results are resolved.</p>
+<p>The arguments passed to the callbacks are the same than those which
+with the component will be called. The scope of the callback is
+the component instance itself, as per the component method.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">methodName</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>eg. &#39;initialize&#39;, &#39;remove&#39;</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">fn</code>
+                        <span class="type">Function</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>Actual function to run</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_sandboxes.create" class="method item">
+    <h3 class="name"><code>sandboxes.create</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code class="optional">[ref]</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[options]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Sandbox.html" class="crosslink">Sandbox</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l99"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:99</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Creates a brand new sandbox, using the App&#39;s <code>sandbox</code> object as a prototype.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[ref]</code>
+                        <span class="type">String</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The Sandbox unique ref</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[options]</code>
+                        <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>An object to that directly extends the Sandbox</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Sandbox.html" class="crosslink">Sandbox</a></span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_sandboxes.get" class="method item">
+    <h3 class="name"><code>sandboxes.get</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>ref</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/Sandbox.html" class="crosslink">Sandbox</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l138"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:138</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Get a sandbox by reference.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">ref</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>the Sandbox ref to retreive</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/Sandbox.html" class="crosslink">Sandbox</a></span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
 
                 
                     <div id="method_start" class="method item">
@@ -378,6 +1174,8 @@
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -385,7 +1183,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l111"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:111</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l199"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:199</code></a>
         
         </p>
 
@@ -409,6 +1207,79 @@
                 
                     
                         <span class="type">Promise</span>:
+                    
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_stop" class="method item">
+    <h3 class="name"><code>stop</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Void</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l247"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:247</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Stops the application and unregister its loaded dependencies.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Void</span>:
                     
                 
             </div>
@@ -460,6 +1331,8 @@
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -467,7 +1340,7 @@
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l88"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:88</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l176"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:176</code></a>
         
         </p>
 
@@ -546,6 +1419,53 @@ Note that the App is started when its <code>start</code> method is called.</p>
                 <h2 class="off-left">Properties</h2>
 
                 
+                    <div id="property_components" class="property item">
+    <h3 class="name"><code>components</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l149"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:149</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Namespace for components related methods.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="property_config" class="property item">
     <h3 class="name"><code>config</code></h3>
     <span class="type">Object</span>
@@ -562,6 +1482,8 @@ Note that the App is started when its <code>start</code> method is called.</p>
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -569,7 +1491,7 @@ Note that the App is started when its <code>start</code> method is called.</p>
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l49"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:49</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l52"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:52</code></a>
         
         </p>
 
@@ -606,6 +1528,8 @@ Note that the App is started when its <code>start</code> method is called.</p>
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -613,7 +1537,7 @@ Note that the App is started when its <code>start</code> method is called.</p>
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l67"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:67</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l70"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:70</code></a>
         
         </p>
 
@@ -652,6 +1576,8 @@ used by the extensions to add new features.</p>
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -659,7 +1585,7 @@ used by the extensions to add new features.</p>
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l61"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:61</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l64"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:64</code></a>
         
         </p>
 
@@ -696,6 +1622,8 @@ used by the extensions to add new features.</p>
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -703,7 +1631,7 @@ used by the extensions to add new features.</p>
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l55"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:55</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l58"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:58</code></a>
         
         </p>
 
@@ -740,6 +1668,8 @@ used by the extensions to add new features.</p>
         
             
                 
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
                 <p>
                 
                 Defined in
@@ -747,7 +1677,7 @@ used by the extensions to add new features.</p>
             
         
         
-        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l76"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:76</code></a>
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l79"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:79</code></a>
         
         </p>
 
@@ -761,6 +1691,53 @@ used by the extensions to add new features.</p>
 <p>The <code>sandbox</code> property of an Husky application is just an Object that will be used
 as a blueprint, once the app is started, to create new instances
 of sandboxed environments for the components.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_sandboxes" class="property item">
+    <h3 class="name"><code>sandboxes</code></h3>
+    <span class="type">Object</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                    <p>Provided by the <a href="../modules/husky.html">husky</a> module.</p>
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_thomas_Development_JS_Husky-2.0_src_husky.js.html#l91"><code>&#x2F;Users&#x2F;thomas&#x2F;Development&#x2F;JS&#x2F;Husky-2.0&#x2F;src&#x2F;husky.js:91</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Namespace for sanboxes related methods.</p>
 
     </div>
 

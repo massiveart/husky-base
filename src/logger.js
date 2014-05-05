@@ -44,6 +44,7 @@ define(function() {
     /**
      * @method isEnabled
      * @return {Boolean}
+     * @chainable
      */
     Logger.prototype.isEnabled = function() {
         return this.enabled;
@@ -60,6 +61,7 @@ define(function() {
     /**
      * @method enable
      * @return {Logger}
+     * @chainable
      */
     Logger.prototype.enable = function() {
         this.logWriter = (console.log || noop);
