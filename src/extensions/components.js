@@ -493,12 +493,15 @@ define('husky/extensions/components', function() {
                  * @method components.addType
                  * @param {String} type A string that will identify the component type.
                  * @param {Function} def A constructor the this component type
+                 * @return {Husky} The Husky app instance
+                 * @chainable
                  */
                 app.components.addType = function(type, def) {
                     if (app.core.Components[type]) {
-                        throw new Error("Component type " + type + " already defined");
+                        throw new Error('Component type ' + type + ' already defined');
                     }
                     app.core.Components[type] = Component.extend(def);
+                    return app;
                 };
 
                 /**
