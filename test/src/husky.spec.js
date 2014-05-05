@@ -6,13 +6,7 @@ define(['husky/husky'], function(husky) {
 
     describe('Husky', function() {
 
-        xit('version check', function() {
-            app = husky({ debug: true });
-
-            expect(app.version).toBe('0.1.0');
-        });
-
-        it('application start', function() {
+        it('application start', function(done) {
             app = husky({ debug: true });
 
             var promise = app.start();
@@ -20,7 +14,8 @@ define(['husky/husky'], function(husky) {
             expect(promise.then).toBeDefined();
 
             promise.then(function() {
-                app.logger.log('Husky started...');
+                app.logger.log('Husky started ...');
+                done();
             });
         });
     });
