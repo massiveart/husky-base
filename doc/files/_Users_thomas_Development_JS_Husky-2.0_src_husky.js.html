@@ -311,7 +311,7 @@ define([&#x27;module&#x27;, &#x27;./base&#x27;, &#x27;./extension&#x27;, &#x27;.
                 return extensionManager.initStatus.promise();
             }
 
-            app.logger.log(&#x27;Starting Aura&#x27;);
+            app.logger.log(&#x27;Starting Husky&#x27;);
 
             var startOptions = options || {};
 
@@ -387,7 +387,7 @@ define([&#x27;module&#x27;, &#x27;./base&#x27;, &#x27;./extension&#x27;, &#x27;.
                 sandbox = app.sandboxes.get(sandbox);
             }
             if (sandbox) {
-                var event = [&#x27;aura&#x27;, &#x27;sandbox&#x27;, &#x27;stop&#x27;].join(app.config.mediator.delimiter);
+                var event = [&#x27;husky&#x27;, &#x27;sandbox&#x27;, &#x27;stop&#x27;].join(app.config.mediator.delimiter);
                 _.invoke(sandbox._children, &#x27;stop&#x27;);
                 app.core.mediator.emit(event, sandbox);
                 if (sandbox._component) {

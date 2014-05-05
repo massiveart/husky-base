@@ -207,7 +207,7 @@ define(['module', './base', './extension', './logger'], function(module, base, E
                 return extensionManager.initStatus.promise();
             }
 
-            app.logger.log('Starting Aura');
+            app.logger.log('Starting Husky');
 
             var startOptions = options || {};
 
@@ -283,7 +283,7 @@ define(['module', './base', './extension', './logger'], function(module, base, E
                 sandbox = app.sandboxes.get(sandbox);
             }
             if (sandbox) {
-                var event = ['aura', 'sandbox', 'stop'].join(app.config.mediator.delimiter);
+                var event = ['husky', 'sandbox', 'stop'].join(app.config.mediator.delimiter);
                 _.invoke(sandbox._children, 'stop');
                 app.core.mediator.emit(event, sandbox);
                 if (sandbox._component) {
