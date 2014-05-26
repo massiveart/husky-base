@@ -24,7 +24,7 @@ $toolbarSmallHeight: 20px;
             min-width: 30px;
 
             a  {
-                line-height: $toolbarSmallHeight - 2px;
+                line-height: $toolbarSmallHeight - 3px;
                 min-width: 30px;
 
                 .icon, &.icon {
@@ -45,8 +45,6 @@ $toolbarSmallHeight: 20px;
 
 /*group specific styles*/
 .group {
-    $itemBorderRadius: 4px;
-
     padding-left: 0;
     margin: 0;
     list-style: none;
@@ -75,14 +73,14 @@ $toolbarSmallHeight: 20px;
         border-width: 1px 1px 1px 0;
 
         &:first-child {
-            border-radius: $itemBorderRadius 0 0 $itemBorderRadius;
+            border-radius: $borderRadius 0 0 $borderRadius;
             border-width: 1px;
         }
         &:last-child {
-            border-radius: 0 $itemBorderRadius $itemBorderRadius 0;
+            border-radius: 0 $borderRadius $borderRadius 0;
         }
         &:only-child {
-            border-radius: $itemBorderRadius;
+            border-radius: $borderRadius;
         }
     }
 }
@@ -196,17 +194,17 @@ $toolbarSmallHeight: 20px;
     a {
         text-align: center;
         color: black;
-        padding: 0 10px 0 9px;
+        padding: 0 10px 0 8px;
         display: table;
         text-decoration: none;
         height: 100%;
-        line-height: $toolbarHeight - 2px;
+        line-height: $toolbarHeight;
         outline: none;
         width: 100%;
         min-width: 50px;
 
         .icon, &.icon {
-            font-size: 15px;
+            font-size: 16px;
             padding-right: 0px;
             display: inline-block;
         }
@@ -229,7 +227,7 @@ $toolbarSmallHeight: 20px;
 .toolbar-dropdown-menu {
   background-color: white;
   border: 1px solid $grayLighter;
-  border-radius: $dropdownBorderRadiusSmall;
+  border-radius: $borderRadiusSmall;
 
   display: none;
   position: absolute;

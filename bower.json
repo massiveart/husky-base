@@ -17,7 +17,14 @@
         "requirejs-text": "~2.0.12",
         "jquery": "~2.1.1",
         "lodash": "~2.4.1",
-        "eventemitter2": "~0.4.13"
+        "eventemitter2": "~0.4.13",
+        "backbone": "~1.0.0",
+        "husky-validation": "#develop",
+        "globalize": "0.1.*",
+        "massiveart-uritemplate": "0.3.*",
+        "typeahead.js": "~0.9.3",
+        "tagmanager": "3.0.*",
+        "dropzone": "3.9.*"
     },
     "devDependencies": {
         "zone": "~0.2.1"
@@ -29,5 +36,8 @@
         "bower_components",
         "test",
         "tests"
-    ]
+    ],
+    "resolutions": {
+        "jquery": "2.1.*"
+    }
 }

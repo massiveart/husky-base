@@ -14,20 +14,31 @@
             cursor: move;
 
             &::before {
-                @extend .icon-move;
-                margin-left: -15px;
-                position: relative;
-                top: 2px;
-                left: 0px;
+                @extend .fa;
+                content: $fa-var-ellipsis-v;
                 cursor: move;
+                padding-right: 5px;
+                margin-left: -10px;
             }
         }
 
-        .options {
+        .options-change {
+          float: left;
+          cursor: pointer;
+          margin-left: 10px;
+          display: none;
+          font-size: 16px;
+          .dropdown-toggle::after {
+            margin-left: 0;
+          }
+        }
+        .options-remove {
             float: right;
             cursor: pointer;
             margin-top: 5px;
+            margin-left: 8px;
             display: none;
+            font-size: 16px;
         }
 
         &::after {
@@ -39,6 +50,8 @@
     .container {
         padding: 10px 20px 20px 20px;
         background: $grayLighterer;
+        border: 1px solid $grayLighter;
+        @include standard-box-shadow(2px, rgba(0,0,0,0.06));
 
         label {
             margin-bottom: 10px;
@@ -52,7 +65,7 @@
     }
 
     &:hover {
-        .head .options {
+        .head .options-remove, .head .options-change {
             display: block;
         }
     }
@@ -60,10 +73,10 @@
 
 .empty {
     .text-block {
-        .head .options {
+        .head .options-remove {
             display: none;
         }
-        &:hover .head .options {
+        &:hover .head .options-remove {
             display: none;
         }
     }

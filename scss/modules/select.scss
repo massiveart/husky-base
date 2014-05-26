@@ -7,7 +7,7 @@
             font-size: $baseFontSize;
             padding: 5px 10px 5px 15px;
 
-            .dropdown-toggle {
+            .toggle-icon {
                 right: 15px;
                 top: 5px;
             }
@@ -18,16 +18,25 @@
         background: $grayLighter;
         padding: 0px 5px 0px 10px;
         line-height: 30px;
-        border-radius: 4px;
-        clear: both;
+        border-radius: $borderRadius;
         font-size: $smallFontSize;
+        @include clear-float;
         .checkbox {
             padding-right: 20px;
         }
-        .dropdown-toggle {
+        .icon {
+            float: left;
+            font-size: 15px;
+            padding-right: 4px;
+            display: block;
+            line-height: 30px;
+        }
+        .toggle-icon {
             position: absolute;
             top: 0px;
             right: 10px;
+            font-size: 14px;
+            line-height: 30px;
         }
     }
 
@@ -35,13 +44,6 @@
         .dropdown-label {
             background: $grayLighterer;
             color: $gray;
-            cursor: default;
-        }
-        .dropdown-toggle {
-            cursor: default;
-        }
-        .dropdown-toggle:after {
-            border-top-color: $gray;
             cursor: default;
         }
     }
@@ -56,7 +58,7 @@
         background-color: #FFF;
         border: 1px solid $grayLighter;
         z-index: 2000;
-        border-radius: $dropdownBorderRadius;
+        border-radius: $borderRadius;
 
         &.top {
             top: inherit;
@@ -113,19 +115,32 @@
             font-size: $reallySmallFontSize;
             line-height: 20px;
         }
-        .dropdown-toggle::after {
-            top: 0;
+        .toggle-icon {
+          line-height: 20px;
         }
         .dropdown-list {
             top: 12px;
             min-width: 200px;
             max-width: 100%;
-            border-radius: $dropdownBorderRadiusSmall;
+            border-radius: $borderRadiusSmall;
 
             &.top {
                 top: auto;
                 bottom: -3px;
             }
+        }
+    }
+
+    &.white {
+        .dropdown-label {
+            background: $white;
+        }
+    }
+
+    &.action {
+        .dropdown-label {
+            background: $blue;
+            color: $white;
         }
     }
 

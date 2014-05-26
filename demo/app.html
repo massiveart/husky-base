@@ -16,20 +16,25 @@
             #content {
                 width: 800px;
                 margin-left: 300px;
-                margin-top: 100px;
+                margin-top: 50px;
                 min-height: 300px;
                 background: #f1f1f1;
             }
         </style>
     </head>
     <body>
-
-        <div data-husky-component="header"></div>
-
-        <div data-husky-component="navigation" data-husky-url="/navigation" data-husky-collapse="true"></div>
+        <div data-husky-component="navigation"
+             data-husky-select-action="webspaces/cn_cn"
+             data-husky-url="http://husky.lo:7878/admin/api/navigation"
+             data-husky-user-name="Donald Duck"
+             data-husky-system-version="1.111"
+             data-husky-user-locales='["en_us","en","de","de_at"]'
+             data-husky-user-locale="en_us"
+             data-husky-translations='{"versionHistory":"Version history","user":"User"}'
+                ></div>
 
         <div id="content" class="grid">
-
+            <h1>Husky Demo</h1>
             <form action="#">
                 <div class="grid-row">
                     <div class="grid-col-6">
@@ -42,11 +47,15 @@
                     </div>
                 </div>
             </form>
+            <h2 class="m-bottom-20 m-top-30">Datagrid Demo</h2>
+            <div id="my-toolbar"></div>
+            <div id="my-datagrid"></div>
 
         </div>
 
         <script src="../bower_components/zone/zone.js"></script>
         <script src="../bower_components/zone/long-stack-trace-zone.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script data-main="app" src="../bower_components/requirejs/require.js"></script>
 
     </body>

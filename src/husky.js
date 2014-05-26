@@ -1,7 +1,7 @@
 /**
  * This file is part of Husky, a scalable, event-driven JavaScript web applications framework.
  *
- * (c) Thomas Schedler <thomas@chirimoya.at>
+ * (c) MASSIVE ART WebServices <webservices@massiveart.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -304,6 +304,16 @@ define(['module', './base', './extension', './logger'], function(module, base, E
 
         app.use('husky/extensions/mediator');
         app.use('husky/extensions/components');
+
+        app.use('husky/extensions/collection');
+        app.use('husky/extensions/dropzone');
+        app.use('husky/extensions/globalize');
+        app.use('husky/extensions/husky-validation');
+        app.use('husky/extensions/model');
+        app.use('husky/extensions/tagmanager');
+        app.use('husky/extensions/template');
+        app.use('husky/extensions/typeahead');
+        app.use('husky/extensions/uri-template');
 
         return app;
     }

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 @import
-	"abstract/abstract-loader.scss",
 	"abstract/abstract-validation.scss";
 
 
@@ -14,19 +13,18 @@
     "utilities.scss",
     "typo.scss",
     "various.scss",
+    "fontsawesome/font-awesome.scss",
     "dropdown-menu.scss";
 
 
 // Husky Modules
 @import
     "modules/overlay",
-    "modules/glyphicons.scss",
-    "modules/icons.scss",
+    "modules/custom-icons.scss",
     "modules/core.scss",
     "modules/column-options.scss",
     "modules/grid.scss",
     "modules/form.scss",
-    "modules/header.scss",
     "modules/navigation.scss",
     "modules/dropdown.scss",
     "modules/tables.scss",
@@ -37,7 +35,6 @@
     "modules/search.scss",
     "modules/tabs.scss",
     "modules/toolbar.scss",
-    "modules/dialog.scss",
     "modules/matrix.scss",
     "modules/validation.scss",
     "modules/loader.scss",
@@ -49,5 +46,7 @@
     "modules/label",
     "modules/matcher",
     "modules/process",
+    "modules/toggler",
     "modules/content-types",
-    "modules/toggler";
+    "modules/dropzone",
+    "modules/thumbnails";
