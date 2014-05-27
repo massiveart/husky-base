@@ -17,7 +17,10 @@ define(['module', './base', './extension', './logger'], function(module, base, E
         defaults = {
             debug: false,
             sources: {
-                husky: huskyPath + '/components'
+                husky: huskyPath + '/components/core',
+                core: huskyPath + '/components/core',
+                crm: huskyPath + '/components/crm',
+                cm: huskyPath + '/components/cm'
             }
         };
 
@@ -314,6 +317,9 @@ define(['module', './base', './extension', './logger'], function(module, base, E
         app.use('husky/extensions/template');
         app.use('husky/extensions/typeahead');
         app.use('husky/extensions/uri-template');
+        app.use('husky/extensions/util');
+        app.use('husky/extensions/dom');
+        app.use('husky/extensions/ckeditor');
 
         return app;
     }

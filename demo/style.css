@@ -1,0 +1,17 @@
+/**
+  *
+  * STYLE FOR HUSKY-JS DEMOS
+  ******************************************************/
+
+body {
+    margin: 20px;
+}
+
+.blueBackground {
+    padding: 30px 10px;
+    background: #52B6CA;
+}
+
+#content {
+    margin-left: 300px;
+}

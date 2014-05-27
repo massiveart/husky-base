@@ -1,0 +1,89 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Husky JS - Overlay Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../../../css/husky.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<style>
+    .content-inner {
+        padding: 0 20px;
+    }
+
+    .content-inner textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .column-navigation-slide .overlay-header {
+        margin-bottom: 0px;
+    }
+
+    .column-navigation-slide .overlay-content {
+        margin: 0px;
+    }
+
+    .column-navigation-slide .overlay-footer {
+        margin: 0px;
+    }
+</style>
+<body>
+
+<h1>Husky JS - Overlay Demo</h1>
+
+<div class="grid">
+    <div class="grid-row m-top-30">
+        <div class="grid-col-6"><h2>Default types</h2></div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="normal">Normal</div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="warning">Warning</div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="error">Error</div>
+    </div>
+
+    <div class="grid-row m-top-30">
+        <div class="grid-col-6"><h2>Examples</h2></div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="withtabs">Overlay with tabs and language selector
+        </div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="showme3">Show me an overlay with deactivated ok
+        </div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="showme4">Show me an overlay with skin wide</div>
+    </div>
+    <div class="grid-row m-top-20">
+        <div class="btn pointer grid-col-6 align-center" id="slides">Show me an overlay slides</div>
+    </div>
+</div>
+<div id="overlay1"></div>
+<div id="overlay2"></div>
+<div id="overlay3"></div>
+<div id="overlay4"></div>
+<div id="overlay5"></div>
+<div id="insertOverlayHere"></div>
+<div id="overlaySlides"></div>
+
+<script src="../../../bower_components/zone/zone.js"></script>
+<script src="../../../bower_components/zone/long-stack-trace-zone.js"></script>
+<script src="../../../bower_components/jquery/dist/jquery.js"></script>
+<script data-main="script" src="../../../bower_components/requirejs/require.js"></script>
+
+</body>
+</html>

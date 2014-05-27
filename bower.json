@@ -24,7 +24,9 @@
         "massiveart-uritemplate": "0.3.*",
         "typeahead.js": "~0.9.3",
         "tagmanager": "3.0.*",
-        "dropzone": "3.9.*"
+        "html5sortable": "latest",
+        "dropzone": "3.9.*",
+        "ckeditor": "~4.3.1"
     },
     "devDependencies": {
         "zone": "~0.2.1"

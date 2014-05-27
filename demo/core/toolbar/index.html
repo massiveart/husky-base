@@ -1,0 +1,66 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Husky JS - Toolbar Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../../../css/husky.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Husky JS - Toolbar Demo</h1>
+
+<div class="grid">
+    <div class="grid-row">
+        <div class="btn pointer grid-col-8 align-center" id="disable">Disable "Add user" and "Edit" button</div>
+    </div>
+    <div class="grid-row">
+        <div class="btn pointer grid-col-8 align-center" id="enable">Enable "Add user" and "Edit" button</div>
+    </div>
+    <div class="grid-row">
+        <div class="btn pointer grid-col-8 align-center" id="changeItem">Change current item of state</div>
+    </div>
+    <div class="grid-row">
+        <div class="btn pointer grid-col-8 align-center" id="collapse">Collapse/Expand toolbar</div>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="grid-row">
+        <h3>default</h3>
+        <div id="toolbar2"></div>
+    </div>
+    <div class="grid-row">
+        <div id="toolbar3"></div>
+    </div>
+    <div class="grid-row">
+        <h3>default (small)</h3>
+        <div id="toolbar4"></div>
+    </div>
+    <div class="grid-row">
+        <h3>blueish</h3>
+        <div class="blueBackground">
+            <div id="toolbar5"></div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="blueBackground">
+            <div id="toolbar6"></div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../bower_components/zone/zone.js"></script>
+<script src="../../../bower_components/zone/long-stack-trace-zone.js"></script>
+<script src="../../../bower_components/jquery/dist/jquery.js"></script>
+<script data-main="script" src="../../../bower_components/requirejs/require.js"></script>
+
+</body>
+</html>

@@ -7,7 +7,7 @@ define([], function() {
             type: 'html',
             compiler: _.template,
             lookup: [],
-            components: 'aura_components'
+            components: 'husky_components'
         });
 
         this.cache = {};
@@ -60,7 +60,7 @@ define([], function() {
         },
 
         find: function(name, namespace) {
-            namespace = namespace || 'aura';
+            namespace = namespace || 'husky';
             var template = $('script[data-' + namespace + '-template="' + name + '"]').html(),
                 hash;
 

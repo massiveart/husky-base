@@ -1,0 +1,145 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Husky JS - Toggler Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../../../css/husky.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Husky JS - Toggler Demo</h1>
+
+<div class="grid">
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <div id="toggler1" data-husky-component="toggler@husky" data-husky-checked="true"></div>
+            <label class="inline clickable spacing-left" for="toggler1">Switch it</label>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="blueBackground">
+            <div id="toggler2" data-husky-component="toggler@husky" data-husky-checked="false" data-husky-outline="true"></div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-1">
+            <div class="btn action" id="toggle">Toggle</div>
+        </div>
+        <div class="grid-col-1">
+            <div class="btn action2" id="data">Get data</div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <h2 class="divider">Checkboxes</h2>
+        </div>
+    </div>
+    <div class="grid-row small">
+        <div class="grid-col-6">
+            <label for="checkbox1">
+                <div class="custom-checkbox">
+                    <input name="nameForForm" id="checkbox1" type="checkbox" class="form-element"/>
+                    <span class="icon"></span>
+                </div>
+                Checkbox 1
+            </label>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <label for="checkbox2">
+                <div class="custom-checkbox">
+                    <input name="nameForForm2" id="checkbox2" type="checkbox" class="form-element"/>
+                    <span class="icon"></span>
+                </div>
+                Checkbox 2
+            </label>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <div class="custom-checkbox no-spacing">
+                <input name="nameForForm3" id="checkbox3" type="checkbox" class="form-element"/>
+                <span class="icon"></span>
+            </div>
+            <div class="custom-checkbox no-spacing">
+                <input name="nameForForm4" id="checkbo4" type="checkbox" class="form-element"/>
+                <span class="icon"></span>
+            </div>
+            <div class="custom-checkbox no-spacing">
+                <input name="nameForForm5" id="checkbox5" type="checkbox" class="form-element"/>
+                <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <h2 class="divider">Radio Buttons</h2>
+        </div>
+    </div>
+    <div class="grid-row small">
+        <div class="grid-col-6">
+            <label for="radio1">
+                <div class="custom-radio">
+                    <input name="nameForFormA" id="radio1" type="radio" class="form-element"/>
+                    <span class="icon"></span>
+                </div>
+                Radio 1
+            </label>
+        </div>
+    </div>
+    <div class="grid-row small">
+        <div class="grid-col-6">
+            <label for="radio2">
+                <div class="custom-radio">
+                    <input name="nameForFormA" id="radio2" type="radio" class="form-element"/>
+                    <span class="icon"></span>
+                </div>
+                Radio 2
+            </label>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <label for="radio3">
+                <div class="custom-radio">
+                    <input name="nameForFormA" id="radio3" type="radio" class="form-element" checked/>
+                    <span class="icon"></span>
+                </div>
+                Radio 3
+            </label>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <div class="custom-radio no-spacing">
+                <input name="nameForFormB" id="radio4" type="radio" class="form-element" checked/>
+                <span class="icon"></span>
+            </div>
+            <div class="custom-radio no-spacing">
+                <input name="nameForFormB" id="radio5" type="radio" class="form-element"/>
+                <span class="icon"></span>
+            </div>
+            <div class="custom-radio no-spacing">
+                <input name="nameForFormB" id="radio6" type="radio" class="form-element"/>
+                <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../../bower_components/zone/zone.js"></script>
+<script src="../../../bower_components/zone/long-stack-trace-zone.js"></script>
+<script src="../../../bower_components/jquery/dist/jquery.js"></script>
+<script data-main="script" src="../../../bower_components/requirejs/require.js"></script>
+
+</body>
+</html>

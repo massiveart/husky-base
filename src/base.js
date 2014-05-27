@@ -517,6 +517,13 @@
             },
 
             /**
+             * @method dom.sortable
+             */
+            sortable: function(selector, options) {
+                return $(selector).sortable(options);
+            },
+
+            /**
              * @method dom.index
              */
             index: function (selector, filter) {
@@ -665,79 +672,6 @@
              */
             animate: function (selector, properties, options) {
                 $(selector).animate(properties, options);
-            },
-
-            /**
-             * Awesome visible method. Returns true if any part of a given element is not visible
-             * Method is copied and slightly adapted from https://github.com/teamdf/jquery-visible/
-             * @method dom.visible
-             * @param selector {Stirng|Object} element selector or jquery dom object
-             * @param partial {Boolean} if true only returns false if every part of the element is not visible
-             * @param hidden {Boolean} if true checks whether the element is visible, as well as wheter it's within the viewport too. Defaults to true
-             * @param direction {String} to specify the direction to check for visibility. This can either be 'horizontal', 'vertical' or 'both'. Default is to 'both'
-             * @returns {Boolean} true or false whether the element is visible or not
-             */
-            visible: function (selector, partial, hidden, direction) {
-                if (this.length < 1) {
-                    return;
-                }
-                direction = (direction) ? direction : 'both';
-                hidden = (typeof hidden === 'undefined') ? true : hidden;
-
-                var $element = $(selector), $t = $element.length > 1 ? $element.eq(0) : $element,
-                    t = $t.get(0),
-                    vpWidth = app.sandbox.dom.$window.width(),
-                    vpHeight = app.sandbox.dom.$window.height(),
-                    clientSize = hidden === true ? t.offsetWidth * t.offsetHeight : true,
-                    rec, tViz, bViz, lViz, rViz, vVisible, hVisible, viewTop, viewBottom, viewLeft, viewRight,
-                    offset, _top, _bottom, _left, _right, compareTop, compareBottom, compareLeft, compareRight;
-
-                if (typeof t.getBoundingClientRect === 'function') {
-
-                    // Use this native browser method, if available.
-                    rec = t.getBoundingClientRect();
-                    tViz = rec.top >= 0 && rec.top < vpHeight;
-                    bViz = rec.bottom > 0 && rec.bottom <= vpHeight;
-                    lViz = rec.left >= 0 && rec.left < vpWidth;
-                    rViz = rec.right > 0 && rec.right <= vpWidth;
-                    vVisible = partial ? tViz || bViz : tViz && bViz;
-                    hVisible = partial ? lViz || lViz : lViz && rViz;
-
-                    if (direction === 'both') {
-                        return clientSize && vVisible && hVisible;
-                    }
-                    else if (direction === 'vertical') {
-                        return clientSize && vVisible;
-                    }
-                    else if (direction === 'horizontal') {
-                        return clientSize && hVisible;
-                    }
-                } else {
-
-                    viewTop = app.sandbox.dom.$window.scrollTop();
-                    viewBottom = viewTop + vpHeight;
-                    viewLeft = app.sandbox.dom.$window.scrollLeft();
-                    viewRight = viewLeft + vpWidth;
-                    offset = $t.offset();
-                    _top = offset.top;
-                    _bottom = _top + $t.height();
-                    _left = offset.left;
-                    _right = _left + $t.width();
-                    compareTop = partial === true ? _bottom : _top;
-                    compareBottom = partial === true ? _top : _bottom;
-                    compareLeft = partial === true ? _right : _left;
-                    compareRight = partial === true ? _left : _right;
-
-                    if (direction === 'both') {
-                        return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
-                    }
-                    else if (direction === 'vertical') {
-                        return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-                    }
-                    else if (direction === 'horizontal') {
-                        return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
-                    }
-                }
             }
         };
 
@@ -882,86 +816,6 @@
                         callbackValue(array[i], i);
                     }
                 }
-            },
-
-            /**
-             * @method util.load
-             */
-            load: function (url, data) {
-                var deferred = new app.sandbox.data.deferred();
-
-                app.logger.log('load', url);
-
-                app.sandbox.util.ajax({
-                    url: url,
-                    data: data || null,
-
-                    success: function (data, textStatus) {
-                        app.logger.log('data loaded', data, textStatus);
-                        deferred.resolve(data, textStatus);
-                    }.bind(this),
-
-                    error: function (jqXHR, textStatus, error) {
-                        deferred.reject(textStatus, error);
-                    }
-                });
-
-                app.sandbox.emit('husky.util.load.data');
-
-                return deferred.promise();
-            },
-
-            /**
-             * @method util.save
-             */
-            save: function (url, type, data) {
-                var deferred = new app.sandbox.data.deferred();
-
-                app.logger.log('save', url);
-
-                app.sandbox.util.ajax({
-
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-
-                    url: url,
-                    type: type,
-                    data: JSON.stringify(data),
-
-                    success: function (data, textStatus) {
-                        app.logger.log('data saved', data, textStatus);
-                        deferred.resolve(data, textStatus);
-                    }.bind(this),
-
-                    error: function (jqXHR, textStatus, error) {
-                        deferred.reject(jqXHR, textStatus, error);
-                    }
-                });
-
-                app.sandbox.emit('husky.util.save.data');
-
-                return deferred.promise();
-            },
-
-            /**
-             * @method util.cropMiddle
-             */
-            cropMiddle: function (text, maxLength, delimiter) {
-                var substrLength;
-
-                // return text if it doesn't need to be cropped
-                if (!text || text.length <= maxLength) {
-                    return text;
-                }
-
-                // default delimiter
-                if (!delimiter) {
-                    delimiter = '...';
-                }
-
-                substrLength = Math.floor((maxLength - delimiter.length) / 2);
-                return text.slice(0, substrLength) + delimiter + text.slice(-substrLength);
             },
 
             /**

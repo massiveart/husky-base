@@ -888,7 +888,7 @@ define(function() {
             var width, minwidth;
             this.columnWidths = [];
 
-            this.sandbox.dom.each($th, function($el, index) {
+            this.sandbox.util.each($th, function($el, index) {
                 minwidth = this.sandbox.dom.css($el, 'min-width');
                 this.columnWidths.push(minwidth);
 
@@ -962,7 +962,7 @@ define(function() {
                 $inputs = this.sandbox.dom.find('input[type=text]', $tr),
                 fields = [], field, $td;
 
-            this.sandbox.dom.each($inputs, function($input, index) {
+            this.sandbox.util.each($inputs, function($input, index) {
                 $td = this.sandbox.dom.parent($input, 'td');
                 field = this.sandbox.dom.data($td, 'field');
 

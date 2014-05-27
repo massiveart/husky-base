@@ -1,0 +1,47 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Husky JS - Tabs Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../../../css/husky.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Husky JS - Tabs Demo</h1>
+
+<h3>tabs loaded by passing data</h3>
+
+<div data-husky-component="tabs"
+     data-husky-data='{"id":"529f1f5b7783e","title":"Contacts","header":null,"url":"details","items":[{"title":"Details","action":"details","id":"529f1f5b777f1"},{"title":"Permissions","action":"permissions","id":"529f1f5b7782f"},{"title":"Settings","action":"settings","id":"529f1f5b7782f"},{"title":"Utils","action":"utils","id":"529f1f5b7782f"}]}'
+     data-husky-preselect="Permissions" data-husky-preselector="title"></div>
+<h3>tabs loaded by passing url</h3>
+
+<div data-husky-component="tabs"
+     data-husky-url="http://husky.lo:7878/admin/api/tabs"
+     data-husky-instance-name="contacts"></div>
+<div class="grid">
+    <div class="grid-row">
+        <div class="grid-col-6 m-top-30 pointer" id="deactivate">Deactivate</div>
+        <div class="grid-col-6 m-top-30 pointer" id="activate">Activate</div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-6 m-top-30 pointer" id="enable-item">enable item</div>
+        <div class="grid-col-6 m-top-30 pointer" id="disable-item">disable item</div>
+    </div>
+</div>
+
+<script src="../../../bower_components/zone/zone.js"></script>
+<script src="../../../bower_components/zone/long-stack-trace-zone.js"></script>
+<script src="../../../bower_components/jquery/dist/jquery.js"></script>
+<script data-main="script" src="../../../bower_components/requirejs/require.js"></script>
+
+</body>
+</html>

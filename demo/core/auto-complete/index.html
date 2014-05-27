@@ -1,0 +1,78 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Husky JS - Auto-Complete Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="../../../css/husky.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Husky JS - Auto-Complete Demo</h1>
+
+<div class="grid">
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <div class="auto-complete-container">
+                <label>
+                    Autocomplete
+                    <div id="autocomplete1"></div>
+                </label>
+            </div>
+        </div>
+        <div class="grid-col-6">
+            <div class="auto-complete-container">
+                <label>
+                    Autocomplete2
+                    <div id="autocomplete2"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row m-top-30">
+        <div class="grid-col-6">
+            Search for 'A'
+        </div>
+        <div class="grid-col-6">
+            Search for 'B'
+        </div>
+    </div>
+    <div class="grid-row m-top-30">
+        <div class="grid-col-6">
+            <div class="auto-complete-container">
+                <label>
+                    Autocomplete3 (no new Values)
+                    <div id="autocomplete3"></div>
+                </label>
+            </div>
+        </div>
+        <div class="grid-col-6">
+            <div class="auto-complete-container">
+                <label>
+                    Autocomplete4 (Albanien and Frankreich are excluded)
+                    <div id="autocomplete4"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row m-top-30">
+        <div class="grid-col-6">
+            <button id="dynamicExlude">Exclude Altach for 1.</button>
+        </div>
+    </div>
+</div>
+
+<script src="../../../bower_components/zone/zone.js"></script>
+<script src="../../../bower_components/zone/long-stack-trace-zone.js"></script>
+<script src="../../../bower_components/jquery/dist/jquery.js"></script>
+<script data-main="script" src="../../../bower_components/requirejs/require.js"></script>
+
+</body>
+</html>
