@@ -97,7 +97,9 @@ define('husky/extensions/mediator', function() {
                  */
                 app.sandbox.off = function(name, listener) {
 
-                    if (!this.events) { return; }
+                    if (!this.events) {
+                        return;
+                    }
 
                     this.events = app.core.util.reject(this.events, function(event) {
                         var match = (event.name === name && event.listener === listener);
@@ -135,7 +137,9 @@ define('husky/extensions/mediator', function() {
                  */
                 app.sandbox.stopListening = function() {
 
-                    if (!this.events) { return; }
+                    if (!this.events) {
+                        return;
+                    }
 
                     app.core.util.each(this.events, function(event) {
                         mediator.off(event.name, event.callback);

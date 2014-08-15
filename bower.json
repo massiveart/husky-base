@@ -16,8 +16,11 @@
         "requirejs": "~2.1.14",
         "requirejs-text": "~2.0.12",
         "jquery": "~2.1.1",
-        "lodash": "~2.4.1",
-        "eventemitter2": "~0.4.14"
+        "underscore": "~1.6.0",
+        "eventemitter2": "~0.4.14",
+        "backbone": "~1.1.2",
+        "ractive": "~0.5.5",
+        "ractive-backbone": "~0.1.1"
     },
     "devDependencies": {
         "zone": "~0.2.1"

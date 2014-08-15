@@ -12,7 +12,9 @@ define(function() {
 
     'use strict';
 
-    var noop = function() {},
+    var noop = function() {
+            // no Operation
+        },
         console = window.console || {};
 
     /**

@@ -304,6 +304,7 @@ define(['module', './base', './extension', './logger'], function(module, base, E
 
         app.use('husky/extensions/mediator');
         app.use('husky/extensions/components');
+        app.use('husky/extensions/mvc');
 
         return app;
     }

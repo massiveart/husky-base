@@ -312,7 +312,7 @@ define('husky/extensions/components', function() {
                         }
 
                         if (!ComponentConstructor) {
-                            throw new Error('Can\'t find component of type "' + componentDefinition.type + '", did you forget to include the extension that provides it ?');
+                            throw new Error('Can\'t find component of type "' + componentDefinition.type + '", did you forget to include the extension that provides it?');
                         }
 
                         if (core.util.isObject(componentDefinition)) {

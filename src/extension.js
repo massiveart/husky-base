@@ -14,7 +14,10 @@ define(['./base', './logger'], function(base, Logger) {
 
     var deferred = base.data.deferred,
         when = base.data.when,
-        logger = new Logger('Extensions').enable();
+        logger = new Logger('Extensions').enable(),
+        noop = function() {
+            // no Operation
+        };
 
     /**
      * @class ExtensionManager
@@ -236,10 +239,12 @@ define(['./base', './logger'], function(base, Logger) {
 
         for (i = 0, len = funcs.length; i < len; i++) {
             fn = funcs[i];
-            if (typeof(fn) === 'function') { return fn; }
+            if (typeof(fn) === 'function') {
+                return fn;
+            }
         }
 
-        return function() {};
+        return noop;
     }
 
     /*!
