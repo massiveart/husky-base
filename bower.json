@@ -13,11 +13,11 @@
     ],
     "main": "src/husky.js",
     "dependencies": {
-        "requirejs": "~2.1.11",
+        "requirejs": "~2.1.14",
         "requirejs-text": "~2.0.12",
         "jquery": "~2.1.1",
         "lodash": "~2.4.1",
-        "eventemitter2": "~0.4.13"
+        "eventemitter2": "~0.4.14"
     },
     "devDependencies": {
         "zone": "~0.2.1"
