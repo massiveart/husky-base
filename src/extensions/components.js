@@ -12,7 +12,6 @@ define('husky/extensions/components', function() {
 
     'use strict';
 
-
     return function(app) {
 
         var core = app.core,
@@ -103,7 +102,7 @@ define('husky/extensions/components', function() {
          * callbacks of the given component.
          */
         function invokeWithCallbacks(fn, context) {
-            var fnName, before, result,
+            var fnName, before,
                 dfd = app.core.data.deferred(),
                 args = [].slice.call(arguments, 2);
 
@@ -119,11 +118,12 @@ define('husky/extensions/components', function() {
 
             before = invokeCallbacks('before', fnName, context, args);
             before.then(function() {
-                result = fn.apply(context, args);
-                return result;
-            }).then(function() {
-                invokeCallbacks('after', fnName, context, args).then(function() {
-                    dfd.resolve(result);
+                return fn.apply(context, args);
+            }).then(function(result) {
+                return invokeCallbacks('after', fnName, context, args).then(function() {
+                    core.data.when(result).then(function() {
+                        dfd.resolve(result)
+                    });
                 }, dfd.reject);
             }).fail(function(err) {
                 app.logger.error('Error in `Component` ' + context.options.name + ' ' + fnName + ' callback', err);
@@ -183,7 +183,9 @@ define('husky/extensions/components', function() {
          */
         function Component(options) {
 
-            var opts = core.util.clone(options);
+            var opts = core.util.clone(options),
+                dfd = core.data.deferred(),
+                self = this;
 
             /**
              * @property options
@@ -203,7 +205,12 @@ define('husky/extensions/components', function() {
              */
             this.$el = core.dom.find(opts.el);
 
-            this.invokeWithCallbacks('initialize', this.options);
+            this.initialized = dfd.promise();
+
+            this.invokeWithCallbacks('initialize', this.options).then(function() {
+                dfd.resolve(self);
+            });
+
             return this;
         }
 
@@ -236,8 +243,8 @@ define('husky/extensions/components', function() {
          * A helper function to find matching elements within the Component's root element.
          *
          * @method  $find
-         * @param  {Selector|Object} selector CSS selector or jQuery object.
-         * @return {Object}
+         * @param  {string|object} selector CSS selector or jQuery object.
+         * @return {object}
          */
         Component.prototype.$find = function(selector) {
             return this.$el.find(selector);
@@ -247,8 +254,8 @@ define('husky/extensions/components', function() {
          * Invoke method with components registered before and after callbacks.
          *
          * @method  invokeWithCallbacks
-         * @param  {String} methodName the name of the method to invoke with callbacks
-         * @return {Promise} a Promise that will resolve to the return value of the original function invoked.
+         * @param  {string} methodName the name of the method to invoke with callbacks
+         * @return {promise} a Promise that will resolve to the return value of the original function invoked.
          */
         Component.prototype.invokeWithCallbacks = function(methodName) {
             return invokeWithCallbacks.apply(undefined, [methodName, this].concat([].slice.call(arguments, 1)));
@@ -290,7 +297,7 @@ define('husky/extensions/components', function() {
             require.config(opts.require);
 
             // Here, we require the component's package definition
-            require([ref], function(componentDefinition) {
+            require(['jsx!' + ref], function(componentDefinition) {
 
                 if (!componentDefinition) {
                     return dfd.reject('Component ' + ref + ' definition is empty!');
@@ -340,7 +347,7 @@ define('husky/extensions/components', function() {
                     // Sandbox owns its el and vice-versa
                     newComponent.$el.data('__sandbox_ref__', sandbox.ref);
 
-                    initialized = core.data.when(newComponent);
+                    initialized = newComponent.initialized;
 
                     initialized.then(function(ret) {
                         dfd.resolve(ret);
@@ -407,8 +414,8 @@ define('husky/extensions/components', function() {
          *
          * @method startAll
          * @static
-         * @param  {Array|String} components `Component.parseList`
-         * @return {Promise} A promise that resolves to a list of started components.
+         * @param  {array|string} components `Component.parseList`
+         * @return {promise} A promise that resolves to a list of started components.
          */
         Component.startAll = function(components) {
             var componentsList = Component.parseList(components),
@@ -459,7 +466,7 @@ define('husky/extensions/components', function() {
                  * the component instance itself, as per the component method.
                  *
                  * @method components.before
-                 * @param {String} methodName eg. 'initialize', 'remove'
+                 * @param {String} methodName eg. 'initialize', 'destroy'
                  * @param {Function} fn Actual function to run
                  */
                 app.components.before = function(methodName, fn) {
@@ -471,7 +478,7 @@ define('husky/extensions/components', function() {
                  * Same as components.before, but executed after the method invocation.
                  *
                  * @method components.after
-                 * @param {[type]} methodName eg. 'initialize', 'remove'
+                 * @param {[type]} methodName eg. 'initialize', 'destroy'
                  * @param {Function} fn Actual function to run
                  */
                 app.components.after = function(methodName, fn) {
@@ -514,8 +521,8 @@ define('husky/extensions/components', function() {
                  * target the element that will be parsed to look for Components to start.
                  *
                  * @method  start
-                 * @param {Array|Selector} list Array of Components to start or parent node.
-                 * @param {Object} options Available options: `reset` : if true, all current children
+                 * @param {array|string} list Array of Components to start or parent node.
+                 * @param {promise} options Available options: `reset` : if true, all current children
                  *                         will be stopped before start.
                  */
                 app.sandbox.start = function(list, options) {
@@ -527,7 +534,7 @@ define('husky/extensions/components', function() {
                         children = [];
                     }
 
-                    Component.startAll(list).done(function() {
+                    return Component.startAll(list).done(function() {
                         var components = Array.prototype.slice.call(arguments);
                         _.each(components, function(component) {
                             component.sandbox.component = component;
@@ -536,8 +543,6 @@ define('husky/extensions/components', function() {
                         });
                         this.children = children;
                     }.bind(this));
-
-                    return this;
                 };
             },
 

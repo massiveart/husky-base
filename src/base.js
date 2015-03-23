@@ -27,21 +27,21 @@
     }
 
     if (window._) {
-        define('lodash', [], function() {
+        define('underscore', [], function() {
             return window._;
         });
     } else {
         require.config({
             paths: {
-                lodash: 'bower_components/lodash/dist/lodash'
+                underscore: 'bower_components/underscore/underscore'
             },
             shim: {
-                lodash: { exports: '_' }
+                underscore: { exports: '_' }
             }
         });
     }
 
-    define(['lodash', 'jquery'], function(_, $) {
+    define(['underscore', 'jquery'], function(_, $) {
 
         /**
          * @class base
@@ -55,8 +55,14 @@
              * @method dom.find
              */
             find: function(selector, context) {
-                context = context || document;
-                return $(context).find(selector);
+                return $(context || document).find(selector);
+            },
+
+            /**
+             * @method dom.contains
+             */
+            contains: function(selector, context) {
+                return $.contains(context || document, selector);
             },
 
             /**
@@ -96,6 +102,11 @@
              * @method util.defaults
              */
             defaults: _.defaults,
+
+            /**
+             * @method util.delay
+             */
+            delay: _.delay,
 
             /**
              * @method util.defer
@@ -143,9 +154,14 @@
             reject: _.reject,
 
             /**
+             * @method util.pick
+             */
+            pick: _.pick,
+
+            /**
              * @method util.uniq
              */
-            uniq: _.uniq,
+            uniq: _.unique,
 
             /**
              * @method util.uniqueId

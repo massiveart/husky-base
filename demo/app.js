@@ -28,9 +28,7 @@ require(['src/husky'], function(husky) {
     var profilingZone = (function() {
         var time = 0,
             // use the high-res timer if available
-            timer = performance ?
-                performance.now.bind(performance) :
-                Date.now.bind(Date);
+            timer = performance ? performance.now.bind(performance) : Date.now.bind(Date);
         return {
             beforeTask: function() {
                 this.start = timer();

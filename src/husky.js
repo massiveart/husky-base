@@ -192,7 +192,7 @@ define(['module', './base', './extension', './logger'], function(module, base, E
          * @chainable
          */
         app.use = function(ref) {
-            extensionManager.add({ ref: ref, context: app});
+            extensionManager.add({ ref: ref, context: app });
             return app;
         };
 
@@ -260,6 +260,25 @@ define(['module', './base', './extension', './logger'], function(module, base, E
          */
 
         /**
+         * Check if any component is not stopped correctly and still referenced by aura.
+         * If that is the case we will stop the component and remove it.
+         *
+         * TODO: Consider using 'MutationObserver' for cleanup
+         *
+         * @method cleanUp
+         * @return {void}
+         */
+        app.cleanUp = function() {
+            _.defer(function() {
+                _.each(appSandboxes, function(sandbox) {
+                    if (!!sandbox && !!sandbox.el && !app.core.dom.contains($(sandbox.el)[0], document)) {
+                        sandbox.stop();
+                    }
+                });
+            });
+        };
+
+        /**
          * Stop method for a Sandbox.
          * If no arguments provided, the sandbox itself and all its children are stopped.
          * If a DOM Selector is provided, all matching children will be stopped.
@@ -268,6 +287,20 @@ define(['module', './base', './extension', './logger'], function(module, base, E
          * @param  {undefined|String} selector DOM Selector
          */
         app.sandbox.stop = function(selector) {
+            // Stop sandbox directly if the selector is a ref and which _ref can be found
+            var sandbox = app.sandboxes.get(selector);
+
+            if (sandbox) {
+                stopSandbox(sandbox);
+            }
+
+            // Return early if selector is invalid
+            try {
+                $.find(selector);
+            } catch (err) {
+                return err;
+            }
+
             if (selector) {
                 app.core.dom.find(selector, this.el).each(function(i, el) {
                     var ref = app.core.dom.find(el).data('__sandbox_ref__');
@@ -287,7 +320,9 @@ define(['module', './base', './extension', './logger'], function(module, base, E
                 _.invoke(sandbox._children, 'stop');
                 app.core.mediator.emit(event, sandbox);
                 if (sandbox._component) {
+                    // remove is deprecated
                     sandbox._component.invokeWithCallbacks('remove');
+                    sandbox._component.invokeWithCallbacks('destroy');
                 }
                 sandbox.stopped = true;
                 sandbox.el && app.core.dom.find(sandbox.el).remove();
@@ -304,6 +339,8 @@ define(['module', './base', './extension', './logger'], function(module, base, E
 
         app.use('husky/extensions/mediator');
         app.use('husky/extensions/components');
+        app.use('husky/extensions/router');
+        app.use('husky/extensions/view');
 
         return app;
     }

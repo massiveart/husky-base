@@ -13,14 +13,17 @@
     ],
     "main": "src/husky.js",
     "dependencies": {
-        "requirejs": "~2.1.11",
+        "requirejs": "~2.1.16",
         "requirejs-text": "~2.0.12",
-        "jquery": "~2.1.1",
-        "lodash": "~2.4.1",
-        "eventemitter2": "~0.4.13"
+        "jquery": "~2.1.3",
+        "underscore": "~1.8.2",
+        "eventemitter2": "~0.4.14",
+        "react": "~0.13.1",
+        "jsx-requirejs-plugin": "~0.5.2",
+        "backbone": "~1.1.2"
     },
     "devDependencies": {
-        "zone": "~0.2.1"
+        "zone": "~0.2.4"
     },
     "license": "MIT",
     "ignore": [

@@ -23,8 +23,8 @@ gulp.task('lint', function() {
 gulp.task('compass', function() {
     gulp.src(path.scss)
         .pipe(compass({
-            css: './css',
-            sass: './scss'
+            css: 'css',
+            sass: 'scss'
         }))
         .pipe(minifyCSS())
         .pipe(rename('husky.min.css'))
@@ -57,9 +57,11 @@ gulp.task('tdd', function() {
 });
 
 gulp.task('connect', function() {
-    connect.server();
+    connect.server({
+        port: 9001
+    });
 });
 
 gulp.task('default', ['connect']);
 
-gulp.task('build', ['lint']);
+gulp.task('build', ['lint', 'compass']);

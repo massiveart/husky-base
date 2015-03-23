@@ -8,15 +8,21 @@
  *
  * @module husky/components
  */
-define(function() {
+define(['view'], function(View) {
 
     'use strict';
 
-    return {
-
-        initialize: function(options) {
-            this.sandbox.logger.log(options);
-            this.sandbox.logger.log(this);
+    var SubNavigation = View.createClass({
+        render: function() {
+            return (
+                <ul>
+                    <li>Test 1</li>
+                    <li>Test 2</li>
+                    <li>Test 3</li>
+                </ul>
+            )
         }
-    };
+    });
+
+    return SubNavigation;
 });
